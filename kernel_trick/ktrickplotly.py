@@ -8,7 +8,7 @@ from plotly.subplots import make_subplots
 
 # Générer des données circulaires non linéairement séparables en 2D
 np.random.seed(0)
-X, y = make_circles(n_samples=100, factor=0.5, noise=0.1)
+X, y = make_circles(n_samples=50, factor=0.5, noise=0.1)
 
 # Ajouter une colonne de zéros à la matrice X pour obtenir une représentation en 3D
 X = np.hstack([X, np.zeros((X.shape[0], 1))])
@@ -59,9 +59,6 @@ fig.update_layout(scene=dict(xaxis=dict(range=[-2, 2], gridcolor='lightgray', sh
                   scene_camera=dict(eye=dict(x=-1.25, y=-1.25, z=0.25)),
                   
                   scene_aspectmode='cube')
-
-
-fig.update_layout()
 
 fig.update_layout(updatemenus=[dict(type="buttons", buttons=[dict(label="Trigger the Kernel Trick !",
                                                                 method="animate",

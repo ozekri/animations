@@ -21,7 +21,7 @@ svm.fit(X[:, :2], y)  # Nous utilisons uniquement les deux premières colonnes d
 X_3d = svm.decision_function(X[:, :2]).reshape(-1, 1)  # Mettre à jour la colonne z avec les valeurs du kernel trick
 
 # Créer une figure
-fig = plt.figure()
+fig = plt.figure(dpi=300)
 ax = fig.add_subplot(111, projection='3d')
 
 # Tracer les points de données 2D initiaux
@@ -35,9 +35,6 @@ ax.view_init(azim=-60, elev=20)
 ax.set_xticks([])
 ax.set_yticks([])
 ax.set_zticks([])
-ax.set_xlabel('Feature 1')
-ax.set_ylabel('Feature 2')
-ax.set_zlabel('')
 
 # Calculer les positions interpolées des points de données
 def calculate_interpolated_positions(X, X_3d, frame):
@@ -72,4 +69,12 @@ def update(frame):
 
 # Créer l'animation
 ani = FuncAnimation(fig, update, frames=np.linspace(0, 100, 100), interval=30)
+
+for i, frame in enumerate(np.linspace(0, 100, 100)):
+    update(frame)
+    if i<=9:
+        plt.savefig(f"gif_saves/frame_0{i}.png",dpi=300, format='png', bbox_inches='tight')
+    else:
+        plt.savefig(f"gif_saves/frame_{i}.png",dpi=300, format='png', bbox_inches='tight')
+
 plt.show()

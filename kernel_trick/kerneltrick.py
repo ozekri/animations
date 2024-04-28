@@ -8,7 +8,7 @@ from matplotlib.animation import FuncAnimation
 
 # Générer des données circulaires non linéairement séparables en 2D
 np.random.seed(0)
-X, y = make_circles(n_samples=100, factor=0.5, noise=0.1)
+X, y = make_circles(n_samples=50, factor=0.5, noise=0.1)
 
 
 # Créer une première figure pour visualiser les données en 2D
