@@ -102,5 +102,4 @@ for i, frame in enumerate(np.linspace(-10, 100, 100)):
     else:
         plt.savefig(f"gif_saves/frame_{i}.png",dpi=300, format='png', bbox_inches='tight')
 plt.show()
-
 """
