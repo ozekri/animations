@@ -87,7 +87,7 @@ def update(frame):
         xx, yy = np.meshgrid(np.linspace(-1.5, 1.5, 10), np.linspace(-1.5, 1.5, 10))
         zz = (-normal_vector[0] * xx - normal_vector[1] * yy) / normal_vector[2]
         # Tracer le plan séparateur
-        ax.hyperplan = ax.plot_surface(xx, yy, zz, color='orange', alpha=0.5,label="Hyperplane")
+        ax.hyperplan = ax.plot_surface(xx, yy, zz, color="#fff4fc", label="Hyperplane")
     
     return scatter,
 
