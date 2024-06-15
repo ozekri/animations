@@ -62,7 +62,7 @@ def calculate_interpolated_positions(X, X_3d, frame):
 
 # Calculer l'opacité en fonction de la frame
 def calculate_opacity(frame):
-    if frame <= 0:
+    if frame <= -2:
         return -frame * 0.03  # Réduire l'opacité de 0.5 à 0.0 sur les 10 premières frames
     else:
         return 0
@@ -92,7 +92,7 @@ def set_axis_properties(axis, alpha):
         axis.pane.set_edgecolor((1, 1, 1, alpha))  # Set pane edge color with alpha
         #axis.pane.set_facecolor((0, 0, 0, 0))     # Set pane face color to transparent
 
-frame_list = np.linspace(-100, 100, 130)
+frame_list = np.linspace(-100, 100, 130)#np.arange(-71,100)
 print(frame_list[0])
 nfr = 40
 t_list = [i/(nfr-1) for i in range(nfr)]
@@ -112,7 +112,7 @@ def update(frame):
         ax.axis('on')
         opacity = calculate_opacity(frame)
         print("op",opacity)
-        set_axis_properties(ax, 1-opacity)
+        #set_axis_properties(ax, 1-opacity)
         ax.plane_surface.set_visible(False)
         ax.plane_surface = ax.plot_surface(x0, y0, z0, color='gray', alpha=opacity)
         if ax.hyperplan is not None:
