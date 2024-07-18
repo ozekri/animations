@@ -35,7 +35,7 @@ plt.tight_layout()
 cmap0 = sns.cubehelix_palette(n_colors=5, as_cmap=True)
 colors =cmap0(np.linspace(0, 1, 5))
 cmap = ListedColormap(colors[2:4])
-scatter = ax.scatter(X[:, 0], X[:, 1], np.zeros_like(X[:, 0]), c=y, cmap=cmap, alpha=1.0)
+scatter = ax.scatter(X[:, 0], X[:, 1], np.zeros_like(X[:, 0]), c=y, cmap=cmap, alpha=0.8, s=50)
 
 # Définir les limites des axes pour une meilleure visualisation
 ax.set_xlim([-2, 2])
@@ -53,7 +53,7 @@ ax.axis('off')
 # Tracer le plan z=0 en gris
 x0, y0 = np.meshgrid(np.linspace(-2, 2, 2), np.linspace(-2, 2, 2))
 z0 = np.zeros_like(x0)
-ax.plane_surface = ax.plot_surface(x0, y0, z0, color='gray', alpha=0.3)
+ax.plane_surface = ax.plot_surface(x0, y0, z0, color='gray', alpha=0.10)
 ax.hyperplan = None
 # Calculer les positions interpolées des points de données
 def calculate_interpolated_positions(X, X_3d, frame):
@@ -145,7 +145,7 @@ def update(frame):
         zz = (-normal_vector[0] * xx - normal_vector[1] * yy) / normal_vector[2]
         # Tracer le plan séparateur
         if 85 <= frame <= 89:
-            ax.hyperplan = ax.plot_surface(xx, yy, zz, color='#3b4a71',alpha = 0.5, label="Hyperplane")
+            ax.hyperplan = ax.plot_surface(xx, yy, zz, color='gray', alpha=0.10, label="Hyperplane")#ax.plot_surface(xx, yy, zz, color='#3b4a71',alpha = 0.5, label="Hyperplane")
     
     return scatter,
     
