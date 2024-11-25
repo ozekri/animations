@@ -1,0 +1,23 @@
+
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{xcolor} % Pour la gestion des couleurs
+
+% Définir les couleurs basées sur la palette Cubhelix
+\definecolor{cubhelix0}{RGB}{218, 59, 70}
+\definecolor{cubhelix1}{RGB}{58, 133, 75}
+\definecolor{cubhelix2}{RGB}{63, 127, 147}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=4cm, >=latex, auto, thick]
+
+    % Ajouter la séquence colorée
+    \node[below=2cm of 0] {%
+        \large\sffamily\bfseries
+\textcolor{cubhelix1}{1}\textcolor{cubhelix0}{0}\textcolor{cubhelix0}{0}\textcolor{cubhelix2}{2}\textcolor{cubhelix2}{2}\textcolor{cubhelix2}{2}\textcolor{cubhelix1}{1}\textcolor{cubhelix0}{0}\textcolor{cubhelix0}{0}\textcolor{cubhelix1}{1}\textcolor{cubhelix2}{2}\textcolor{cubhelix2}{2}\textcolor{cubhelix0}{0}\textcolor{cubhelix0}{0}\textcolor{cubhelix0}{0}\textcolor{cubhelix0}{0}\phantom{\textcolor{cubhelix2}{2}}\phantom{\textcolor{cubhelix2}{2}}\phantom{\textcolor{cubhelix1}{1}}\phantom{\textcolor{cubhelix0}{0}}
+    };
+
+\end{tikzpicture}
+
+\end{document}
