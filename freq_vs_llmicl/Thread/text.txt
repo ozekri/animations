@@ -1,0 +1,19 @@
+🚀 Did you know you can use the in-context learning abilities of an LLM to estimate the transition probabilities of a dynamical system like Markov chains?
+
+The results are pretty exciting ! 😄
+
+---
+What’s even better is that you can derive bounds on the estimation error based on the number of samples N provided and specific properties of the Markov chain. Tested and validated on recent LLMs!
+
+---
+💡 Cool point to note:
+
+Consider a Markov chain with d states. The LLM-based method achieves an error rate of O(log⁡(d)/N), compared to the frequentist approach, which is minimax optimal and achieves O(d/N) (see Wolfer et al., 2019, https://proceedings.mlr.press/v98/wolfer19a/wolfer19a.pdf), 
+
+This makes it particularly efficient for Markov chains with a large number of states! 🌟
+
+---
+For more details, check out these papers:
+
+👉 https://arxiv.org/pdf/2402.00795 — Introduces this method (to the best of my knowledge).  
+👉 https://arxiv.org/pdf/2410.02724 — Provides theoretical results and empirical validation on LLMs.

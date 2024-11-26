@@ -1,0 +1,8 @@
+🚀 Did you know you can use the in-context learning abilities of an LLM to estimate the transition probabilities of a dynamical system like Markov chains?
+
+The results are pretty exciting ! 😄
+
+For more details, check out these papers:
+
+👉 [arXiv:2402.00795](https://arxiv.org/pdf/2402.00795) — Introduces this method (to the best of my knowledge).  
+👉 [arXiv:2410.02724](https://arxiv.org/pdf/2410.02724) — Provides theoretical results and empirical validation on LLMs.
